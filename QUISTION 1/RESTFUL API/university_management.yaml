@@ -1,0 +1,97 @@
+university_client/
+    ├── Ballerina.toml
+    ├── src/
+    │   └── university_management/
+    │       ├── university_management.bal
+    │       ├── 
+    └── tests/
+        └── university_management.bal
+
+[package]
+org = "university_management"
+name = "university_management"
+version = "0.1.0"
+
+[buildOptions]
+observabilityIncluded = true
+
+[[dependencies]]
+path = "C:\Users\tangi\OneDrive\Documents\GitHub\Distributed-Systems-and-Applications-Assignment-1"
+
+- name: /university_management
+  description: University Management Module
+  authors:
+    - name: Tangi Petrus
+      email: tangisylvester@gmail.com
+    - name: Gift Mubita
+      email: mubitagift08@gmail.com
+    - name: Christofine Hango
+      email: hangochristofine@gmail.com
+    - name: Kiimbi Barnabas K
+      email:     bokkekiimbi00@gmail.com
+  repository: https://github.com/Tileni97/Distributed-Systems-and-Applications-Assignment-1
+  license: Apache-2.0
+  versions:
+    - version: 0.1.0
+      stability: Stable
+      description: Initial release
+      ballerinaVersion: 2.0.0
+      moduleName: /university_management
+      moduleOrg: university_management
+  keywords: [university, management]
+  exports:
+    - description: University Management Module
+      resources:
+        - name: get.lecturers
+          description: Get All Lecturers
+        - name: get.lecturers.staff_number.{staff_number}
+          description: Get Lecturer by Staff Number
+        - name: get.lecturers.course.{course}
+          description: Get Lecturers by Course
+        - name: get.lecturers.office_number.{office_number}
+          description: Get Lecturers by Office Number
+        - name: post.lecturers
+          description: Create Lecturer(s)
+        - name: delete.lecturers.staff_number.{staff_number}
+          description: Delete Lecturer by Staff Number
+        - name: put.lecturers.staff_number.{staff_number}
+          description: Update Lecturer by Staff Number
+
+- name: /university_management/error_types
+  description: Error Types for University Management Module
+  license: Apache-2.0
+  versions:
+    - version: 0.1.0
+      stability: Stable
+      description: Initial release
+      ballerinaVersion: 2.0.0
+      moduleName: my_university/university_management/error_types
+      moduleOrg: my_university
+  keywords: [error, types]
+  exports:
+    - description: Error Types for University Management Module
+      errorRecords:
+        - name: ErrorDetails
+          description: Error details record
+          fields:
+            - name: message
+              type: string
+        - name: LecturerNotFound
+          description: Lecturer not found error
+          fields:
+            - name: http:NotFound
+              type: object
+            - name: body
+              type: ErrorDetails
+        - name: ErrorMsg
+          description: Error message record
+          fields:
+            - name: errmsg
+              type: string
+        - name: ConflictingStaffNumberError
+          description: Conflicting Staff Number error
+          fields:
+            - name: http:Conflict
+              type: object
+            - name: body
+              type: ErrorMsg
