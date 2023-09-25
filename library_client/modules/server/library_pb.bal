@@ -210,6 +210,230 @@ public isolated client class LibraryServiceClient {
     }
 }
 
+public client class LibraryServiceCreateUsersResponseCaller {
+    private grpc:Caller caller;
+
+    public isolated function init(grpc:Caller caller) {
+        self.caller = caller;
+    }
+
+    public isolated function getId() returns int {
+        return self.caller.getId();
+    }
+
+    isolated remote function sendCreateUsersResponse(CreateUsersResponse response) returns grpc:Error? {
+        return self.caller->send(response);
+    }
+
+    isolated remote function sendContextCreateUsersResponse(ContextCreateUsersResponse response) returns grpc:Error? {
+        return self.caller->send(response);
+    }
+
+    isolated remote function sendError(grpc:Error response) returns grpc:Error? {
+        return self.caller->sendError(response);
+    }
+
+    isolated remote function complete() returns grpc:Error? {
+        return self.caller->complete();
+    }
+
+    public isolated function isCancelled() returns boolean {
+        return self.caller.isCancelled();
+    }
+}
+
+public client class LibraryServiceUpdateBookResponseCaller {
+    private grpc:Caller caller;
+
+    public isolated function init(grpc:Caller caller) {
+        self.caller = caller;
+    }
+
+    public isolated function getId() returns int {
+        return self.caller.getId();
+    }
+
+    isolated remote function sendUpdateBookResponse(UpdateBookResponse response) returns grpc:Error? {
+        return self.caller->send(response);
+    }
+
+    isolated remote function sendContextUpdateBookResponse(ContextUpdateBookResponse response) returns grpc:Error? {
+        return self.caller->send(response);
+    }
+
+    isolated remote function sendError(grpc:Error response) returns grpc:Error? {
+        return self.caller->sendError(response);
+    }
+
+    isolated remote function complete() returns grpc:Error? {
+        return self.caller->complete();
+    }
+
+    public isolated function isCancelled() returns boolean {
+        return self.caller.isCancelled();
+    }
+}
+
+public client class LibraryServiceAddBookResponseCaller {
+    private grpc:Caller caller;
+
+    public isolated function init(grpc:Caller caller) {
+        self.caller = caller;
+    }
+
+    public isolated function getId() returns int {
+        return self.caller.getId();
+    }
+
+    isolated remote function sendAddBookResponse(AddBookResponse response) returns grpc:Error? {
+        return self.caller->send(response);
+    }
+
+    isolated remote function sendContextAddBookResponse(ContextAddBookResponse response) returns grpc:Error? {
+        return self.caller->send(response);
+    }
+
+    isolated remote function sendError(grpc:Error response) returns grpc:Error? {
+        return self.caller->sendError(response);
+    }
+
+    isolated remote function complete() returns grpc:Error? {
+        return self.caller->complete();
+    }
+
+    public isolated function isCancelled() returns boolean {
+        return self.caller.isCancelled();
+    }
+}
+
+public client class LibraryServiceLocateBookResponseCaller {
+    private grpc:Caller caller;
+
+    public isolated function init(grpc:Caller caller) {
+        self.caller = caller;
+    }
+
+    public isolated function getId() returns int {
+        return self.caller.getId();
+    }
+
+    isolated remote function sendLocateBookResponse(LocateBookResponse response) returns grpc:Error? {
+        return self.caller->send(response);
+    }
+
+    isolated remote function sendContextLocateBookResponse(ContextLocateBookResponse response) returns grpc:Error? {
+        return self.caller->send(response);
+    }
+
+    isolated remote function sendError(grpc:Error response) returns grpc:Error? {
+        return self.caller->sendError(response);
+    }
+
+    isolated remote function complete() returns grpc:Error? {
+        return self.caller->complete();
+    }
+
+    public isolated function isCancelled() returns boolean {
+        return self.caller.isCancelled();
+    }
+}
+
+public client class LibraryServiceListAvailableBooksResponseCaller {
+    private grpc:Caller caller;
+
+    public isolated function init(grpc:Caller caller) {
+        self.caller = caller;
+    }
+
+    public isolated function getId() returns int {
+        return self.caller.getId();
+    }
+
+    isolated remote function sendListAvailableBooksResponse(ListAvailableBooksResponse response) returns grpc:Error? {
+        return self.caller->send(response);
+    }
+
+    isolated remote function sendContextListAvailableBooksResponse(ContextListAvailableBooksResponse response) returns grpc:Error? {
+        return self.caller->send(response);
+    }
+
+    isolated remote function sendError(grpc:Error response) returns grpc:Error? {
+        return self.caller->sendError(response);
+    }
+
+    isolated remote function complete() returns grpc:Error? {
+        return self.caller->complete();
+    }
+
+    public isolated function isCancelled() returns boolean {
+        return self.caller.isCancelled();
+    }
+}
+
+public client class LibraryServiceRemoveBookResponseCaller {
+    private grpc:Caller caller;
+
+    public isolated function init(grpc:Caller caller) {
+        self.caller = caller;
+    }
+
+    public isolated function getId() returns int {
+        return self.caller.getId();
+    }
+
+    isolated remote function sendRemoveBookResponse(RemoveBookResponse response) returns grpc:Error? {
+        return self.caller->send(response);
+    }
+
+    isolated remote function sendContextRemoveBookResponse(ContextRemoveBookResponse response) returns grpc:Error? {
+        return self.caller->send(response);
+    }
+
+    isolated remote function sendError(grpc:Error response) returns grpc:Error? {
+        return self.caller->sendError(response);
+    }
+
+    isolated remote function complete() returns grpc:Error? {
+        return self.caller->complete();
+    }
+
+    public isolated function isCancelled() returns boolean {
+        return self.caller.isCancelled();
+    }
+}
+
+public client class LibraryServiceBorrowBookResponseCaller {
+    private grpc:Caller caller;
+
+    public isolated function init(grpc:Caller caller) {
+        self.caller = caller;
+    }
+
+    public isolated function getId() returns int {
+        return self.caller.getId();
+    }
+
+    isolated remote function sendBorrowBookResponse(BorrowBookResponse response) returns grpc:Error? {
+        return self.caller->send(response);
+    }
+
+    isolated remote function sendContextBorrowBookResponse(ContextBorrowBookResponse response) returns grpc:Error? {
+        return self.caller->send(response);
+    }
+
+    isolated remote function sendError(grpc:Error response) returns grpc:Error? {
+        return self.caller->sendError(response);
+    }
+
+    isolated remote function complete() returns grpc:Error? {
+        return self.caller->complete();
+    }
+
+    public isolated function isCancelled() returns boolean {
+        return self.caller.isCancelled();
+    }
+}
+
 public type ContextRemoveBookRequest record {|
     RemoveBookRequest content;
     map<string|string[]> headers;
@@ -284,6 +508,8 @@ public type ContextCreateUsersResponse record {|
 public type User record {|
     string user_id = "";
     string user_type = "";
+    string userId = "";
+    string profile= "";
 |};
 
 @protobuf:Descriptor {value: LIBRARY_DESC}
@@ -294,6 +520,8 @@ public type RemoveBookRequest record {|
 @protobuf:Descriptor {value: LIBRARY_DESC}
 public type BorrowBookResponse record {|
     boolean success = false;
+     boolean updated = true;
+      string message = "";
 |};
 
 @protobuf:Descriptor {value: LIBRARY_DESC}
@@ -337,6 +565,14 @@ public type ListAvailableBooksResponse record {|
     Book[] books = [];
 |};
 
+# Description.
+#
+# + isbn - field description  
+# + title - field description  
+# + author_1 - field description  
+# + author_2 - field description  
+# + location - field description  
+# + is_available - field description
 @protobuf:Descriptor {value: LIBRARY_DESC}
 public type Book record {|
     string isbn = "";
@@ -350,17 +586,25 @@ public type Book record {|
 @protobuf:Descriptor {value: LIBRARY_DESC}
 public type UpdateBookRequest record {|
     Book book = {};
+    string isbn= "'";
+    string title = "'";
+    string author_1 ="";
+    string author_2 = "";
+    string location = "";
+  
 |};
 
 @protobuf:Descriptor {value: LIBRARY_DESC}
 public type BorrowBookRequest record {|
     User user = {};
-    string book_isbn = "";
+    string isbn = "";
 |};
 
 @protobuf:Descriptor {value: LIBRARY_DESC}
 public type UpdateBookResponse record {|
     Book updated_book = {};
+      boolean updated = true;
+      
 |};
 
 @protobuf:Descriptor {value: LIBRARY_DESC}
