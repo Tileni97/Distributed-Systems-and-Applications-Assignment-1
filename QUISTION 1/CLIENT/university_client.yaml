@@ -1,0 +1,61 @@
+university_client/
+    ├── Ballerina.toml
+    ├── src/
+    │   └── university_client/
+    │       ├── university_client.bal
+    │       ├── 
+    └── tests/
+        └── university_client.bal
+
+[package]
+org = "university_client"
+name = "university_client"
+version = 0.1
+
+[buildOptions]
+observabilityIncluded = true
+
+[[dependencies]]
+path = "C:\Users\tangi\OneDrive\Documents\GitHub\Distributed-Systems-and-Applications-Assignment-1"
+
+- name: /university_management
+  description: University Management Module
+  authors:
+    - name: Tangi Petrus
+      email: tangisylvester@gmail.com
+    - name: Gift Mubita
+      email: mubitagift08@gmail.com
+    - name: Christofine Hango
+      email: hangochristofine@gmail.com
+    - name: Kiimbi Barnabas K
+      email:     bokkekiimbi00@gmail.com
+  keywords: [university, management]
+  repository: https://github.com/Tileni97/Distributed-Systems-and-Applications-Assignment-1
+  license: Apache-2.0
+  versions:
+    - version: 0.1.0
+      stability: Stable
+      description: Initial release
+      ballerinaVersion: 2.0.0
+      moduleName: my_university/university_management
+      moduleOrg: my_university
+  keywords: [university, management]
+  exports:
+    - description: University Management Module
+      resources:
+        - name: main
+          description: University Management Main Function
+        - name: create
+          description: Create a Lecturer
+        - name: update
+          description: Update a Lecturer
+        - name: delete
+          description: Delete a Lecturer
+        - name: getAll
+          description: Get All Lecturers
+        - name: getByCode
+          description: Get Lecturer by Staff Number
+        - name: getByCourse
+          description: Get Lecturers by Course
+        - name: getByOffieNo
+          description: Get Lecturers by Office Number
