@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+message Book {
+    string isbn = 1;
+    string title = 2;
+    string author_1 = 3;
+    string author_2 = 4;
+    string location = 5;
+    bool is_available = 6;
+}
+
+
+message User {
+    string user_id = 1;
+    string user_type = 2; // 'student' or 'librarian'
+}
+
+message AddBookRequest {
+    string user_profile = 1;
+    Book book = 2;
+}
+
+message AddBookResponse {
+    string isbn = 1;
+}
+
+message CreateUsersRequest {
+    repeated User users = 1;
+}
+
+message CreateUsersResponse {
+    repeated User users = 1;
+}
+
+message UpdateBookRequest {
+    Book book = 1;
+}
+
+message UpdateBookResponse {
+    Book updated_book = 1;
+}
+
+message RemoveBookRequest {
+    string isbn = 1;
+}
+
+message RemoveBookResponse {
+    repeated Book books = 1;
+}
+
+message ListAvailableBooksRequest {
+    User user = 1;
+}
+
+message ListAvailableBooksResponse {
+    repeated Book books = 1;
+}
+
+message LocateBookRequest {
+    string isbn = 1;
+}
+
+message LocateBookResponse {
+    string location = 1;
+}
+
+message BorrowBookRequest {
+    User user = 1;
+    string book_isbn = 2;
+}
+
+message BorrowBookResponse {
+    bool success = 1;
+}
+
+service LibraryService {
+    rpc AddBook(AddBookRequest) returns (AddBookResponse);
+    rpc CreateUsers(CreateUsersRequest) returns (CreateUsersResponse);
+    rpc UpdateBook(UpdateBookRequest) returns (UpdateBookResponse);
+    rpc RemoveBook(RemoveBookRequest) returns (RemoveBookResponse);
+    rpc ListAvailableBooks(ListAvailableBooksRequest) returns (ListAvailableBooksResponse);
+    rpc LocateBook(LocateBookRequest) returns (LocateBookResponse);
+    rpc BorrowBook(BorrowBookRequest) returns (BorrowBookResponse);
+}
